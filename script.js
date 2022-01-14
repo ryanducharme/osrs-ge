@@ -4,6 +4,9 @@ $(function () {
     var itemPriceData;
     let itemNames = [];
 
+    //Item image links (fill in itemID at the end of URL)
+    //https://secure.runescape.com/m=itemdb_oldschool/1641812469448_obj_big.gif?id=566
+
     //Get item mapping data
     $.ajax({
         type: 'GET',
@@ -42,7 +45,6 @@ $(function () {
     $('#SearchButton').click(function () {
         var searchFor = $('#search-input').val();
         var items = itemMapping.filter(function (item) {
-
             return item.name.toLowerCase().indexOf(searchFor.toLowerCase()) >= 0;
         });
 
@@ -50,7 +52,7 @@ $(function () {
         //find item in itemPriceData by its ID
         //compare and presenet the price data if both id's match
         var wantedItem = itemMapping.find(o => o.name.toLowerCase() === searchFor.toLowerCase())
-        console.log('Wanted Item: ' + wantedItem.id);
+        //console.log('Wanted Item: ' + wantedItem.id);
 
         $('#item-name').text('Item: ' + wantedItem.name);
         //$('#current-price').text('Price: ' + wantedItem.value);
@@ -59,12 +61,16 @@ $(function () {
 
         for (var i = 0; i < keys.length; i++) {
             if (keys[i] == wantedItem.id) {
-                console.log('Items match!');
+                
                 console.log(itemPriceData.data[wantedItem.id]);
 
+                $('#item-image').attr('src', `https://secure.runescape.com/m=itemdb_oldschool/1641812469448_obj_big.gif?id=${wantedItem.id}`);
                 $('#buy-price').text('Buy: ' + new Intl.NumberFormat().format(itemPriceData.data[wantedItem.id].avgHighPrice));
                 $('#sell-price').text('Sell: ' + new Intl.NumberFormat().format(itemPriceData.data[wantedItem.id].avgLowPrice));
+                
             }
         }
+
+        
     });
 });
