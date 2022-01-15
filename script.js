@@ -63,11 +63,12 @@ $(function () {
             if (keys[i] == wantedItem.id) {
                 
                 console.log(itemPriceData.data[wantedItem.id]);
-
+                var avgHighPrice = itemPriceData.data[wantedItem.id].avgHighPrice;
+                var avgLowPrice = itemPriceData.data[wantedItem.id].avgLowPrice;
                 $('#item-image').attr('src', `https://secure.runescape.com/m=itemdb_oldschool/1641812469448_obj_big.gif?id=${wantedItem.id}`);
-                $('#buy-price').text('Buy: ' + new Intl.NumberFormat().format(itemPriceData.data[wantedItem.id].avgHighPrice));
-                $('#sell-price').text('Sell: ' + new Intl.NumberFormat().format(itemPriceData.data[wantedItem.id].avgLowPrice));
-                
+                $('#buy-price').text('Buy: ' + new Intl.NumberFormat().format(avgHighPrice));
+                $('#sell-price').text('Sell: ' + new Intl.NumberFormat().format(avgLowPrice));
+                $('#margin').text('Margin: ' + new Intl.NumberFormat().format(avgHighPrice - avgLowPrice));
             }
         }
 
