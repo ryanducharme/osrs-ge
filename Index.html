@@ -12,7 +12,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet">
-    
+
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -21,7 +21,7 @@
 
     <title>Quick Flips RS</title>
 
-    
+
 </head>
 
 <body>
@@ -30,32 +30,35 @@
         <div class="row align-items-center">
             <div class="col">
                 <!-- left side -->
-                
+
             </div>
             <div class="col">
-                
+
                 <div class="input-group">
                     <button type="button" class="btn btn-success btn-sm">+</button>
                     <input type="text" class="form-control" value="" autocomplete="off" id="search-input"
                         placeholder="Example: Air Rune" aria-label="Item" aria-describedby="button-addon2">
                     <button class="btn btn-outline-secondary" type="" id="SearchButton">Search</button>
-                    
+
                 </div>
             </div>
             <div class="col">
                 <!-- right side -->
                 <div class="p-2">
                     <div class="form-check form-check-inline">
-                        
-                        <input class="form-check-input" type="radio" name="pricingOptions" id="5m-radio-button" value="5m-pricing" checked>
+
+                        <input class="form-check-input" type="radio" name="pricingOptions" id="5m-radio-button"
+                            value="5m-pricing" checked>
                         <label class="form-check-label" for="">5m</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="pricingOptions" id="1h-radio-button" value="1h-pricing">
+                        <input class="form-check-input" type="radio" name="pricingOptions" id="1h-radio-button"
+                            value="1h-pricing">
                         <label class="form-check-label" for="">1h</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="pricingOptions" id="24h-radio-button" value="24h-pricing">
+                        <input class="form-check-input" type="radio" name="pricingOptions" id="24h-radio-button"
+                            value="24h-pricing">
                         <label class="form-check-label" for="">24h</label>
                     </div>
                 </div>
@@ -65,7 +68,10 @@
     <div id="ItemData" class="container position-relative p-2">
         <div class="row align-items-center">
             <div class="col">
-                <img id="item-image" class="float-end" src="https://services.runescape.com/m=itemdb_oldschool/obj_big.gif?id=556" alt="" width="100" height="100">
+                <img id="item-image" class="float-end"
+                    src="https://services.runescape.com/m=itemdb_oldschool/obj_big.gif?id=556" alt="" width="100"
+                    height="100">
+
             </div>
             <div class="col">
                 <ul class="list-group">
@@ -79,12 +85,25 @@
                 </ul>
             </div>
             <div class="col">
-                
-                    
-                
-                
-            </div>
 
+
+
+
+            </div>
+            <h3>Instructions</h3>
+            <p>Start typing an items name and an autofill box should show up. Either finish typing or click the
+                items name. Click the search button and you will get the currently selected timing option for the
+                pricing data. If you would like to switch the timing, click the option, then click search again and
+                the new timing price data will be shown.
+            </p>
+            <ul>
+                <h5>Example Items</h5>
+                <li>Twisted bow</li>
+                <li>Air Rune</li>
+                <li>Death Rune</li>
+                <li>Abyssal Whip</li>
+                <li>Rune Platebody</li>
+            </ul>
         </div>
 
 </body>

@@ -7,13 +7,13 @@ $(function () {
 
 
 
-    $('#5m-radio-button').click(function(){
+    $('#5m-radio-button').click(function () {
         $('5m-radio-button').prop('checked', true);
     });
-    $('#1h-radio-button').click(function(){
+    $('#1h-radio-button').click(function () {
         $('#1h-radio-button').toggle(this.checked);
     });
-    $('#24h-radio-button').click(function(){
+    $('#24h-radio-button').click(function () {
         $('#24h-radio-button').toggle(this.checked);
     });
     //Get item mapping data
@@ -39,7 +39,7 @@ $(function () {
         }
     });
 
-    
+
 
     $('#SearchButton').click(function () {
         var searchFor = $('#search-input').val();
@@ -51,7 +51,7 @@ $(function () {
                     weGotPrices();
                 })
                 .fail(function () {
-                    // oh shit
+                    // uh oh
                     window.alert('error');
                 })
                 .always(function () {
@@ -66,7 +66,7 @@ $(function () {
                     weGotPrices();
                 })
                 .fail(function () {
-                    // oh shit
+                    // uh oh
                     window.alert('error');
                 })
                 .always(function () {
@@ -81,7 +81,7 @@ $(function () {
                     weGotPrices();
                 })
                 .fail(function () {
-                    // oh shit
+                    // uh oh
                     window.alert('error');
                 })
                 .always(function () {
@@ -112,7 +112,7 @@ $(function () {
                     console.log(wantedItem.id);
                     // new * https://secure.runescape.com/m=itemdb_oldschool/1642417367576_obj_big.gif?id=12934
                     $('#item-image').attr('src', `https://services.runescape.com/m=itemdb_oldschool/obj_big.gif?id=${wantedItem.id}`);
-                    
+
                     $('#buy-price').text('Buy: ' + new Intl.NumberFormat().format(avgHighPrice));
                     $('#sell-price').text('Sell: ' + new Intl.NumberFormat().format(avgLowPrice));
                     $('#margin').text('Margin: ' + new Intl.NumberFormat().format(margin));
